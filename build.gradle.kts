@@ -35,6 +35,7 @@ dependencies {
     //tsid
     implementation("com.github.f4b6a3:tsid-creator:5.2.6")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation( "org.springframework.boot:spring-boot-starter-aop")
 }
 
 tasks.withType<Test> {
