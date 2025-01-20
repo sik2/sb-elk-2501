@@ -7,9 +7,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/api/v1/post")
+@RequestMapping("/api/v1/postDocs")
 @RestController
 @RequiredArgsConstructor
 @Validated
@@ -18,8 +19,8 @@ public class ApiV1PostDocController {
 
     @GetMapping("/write")
     public PostDoc write(
-            @NotBlank String title,
-            @NotBlank String content
+            @NotBlank @RequestParam("title") String title,
+            @NotBlank @RequestParam("content") String content
     ) {
         return postDocService.write(title, content);
     }
