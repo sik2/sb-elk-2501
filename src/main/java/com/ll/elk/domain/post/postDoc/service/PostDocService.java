@@ -25,8 +25,8 @@ public class PostDocService {
         postDocRepository.deleteAll();
     }
 
-    public List<PostDoc> findByTitle(String keyword) {
-        return postDocRepository.findByTitleContainingOrContentContaining(keyword, keyword);
+    public List<PostDoc> searchByKeyword(String keyword) {
+        return postDocRepository.searchByKeyword(keyword);
     }
 }
 

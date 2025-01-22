@@ -38,7 +38,7 @@ public class ApiV1PostDocController {
 
     @GetMapping("/search")
     public List<PostDoc> search(@RequestParam("keyword") String keyword) {
-        return postDocService.findByTitle(keyword);
+        return postDocService.searchByKeyword(keyword);
     }
 
 }
