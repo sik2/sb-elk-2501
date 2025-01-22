@@ -26,7 +26,20 @@ public class PostDocService {
     }
 
     public List<PostDoc> findByTitle(String keyword) {
-        return postDocRepository.findByTitleContainingOrContentContaining(keyword, keyword);
+        return postDocRepository.searchByKeyword(keyword);
+    }
+
+    public void testSearch(String keyword) {
+        List<PostDoc> results = postDocRepository.searchByKeyword(keyword);
+        
+        System.out.println("검색어: " + keyword);
+        System.out.println("검색 결과 수: " + results.size());
+        
+        results.forEach(doc -> {
+            System.out.println("제목: " + doc.getTitle());
+            System.out.println("내용: " + doc.getContent());
+            System.out.println("-------------------");
+        });
     }
 }
 
