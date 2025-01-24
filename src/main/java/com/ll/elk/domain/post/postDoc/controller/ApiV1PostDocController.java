@@ -5,9 +5,7 @@ import com.ll.elk.domain.post.postDoc.service.PostDocService;
 import com.ll.elk.global.rsData.RsData;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,7 +36,7 @@ public class ApiV1PostDocController {
 
     @GetMapping("/search")
     public List<PostDoc> search(@RequestParam("keyword") String keyword) {
-        return postDocService.searchByKeyword(keyword);
+        return postDocService.search(keyword);
     }
 
 }

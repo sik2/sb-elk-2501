@@ -27,5 +27,5 @@ public interface PostDocRepository extends ElasticsearchRepository<PostDoc, Stri
             }
         }
     """)
-    List<PostDoc> searchByKeyword(String keyword);
+    List<PostDoc> search(String keyword);
 }
